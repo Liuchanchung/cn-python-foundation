@@ -10,7 +10,8 @@ with open('texts.csv', 'r') as f:
 with open('calls.csv', 'r') as f:
     reader = csv.reader(f)
     calls = list(reader)
-
+print (texts[0])
+print (calls[-1])
 
 """
 任务0:
