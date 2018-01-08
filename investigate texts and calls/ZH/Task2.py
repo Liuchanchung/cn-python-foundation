@@ -10,7 +10,20 @@ with open('texts.csv', 'r') as f:
 with open('calls.csv', 'r') as f:
     reader = csv.reader(f)
     calls = list(reader)
-
+def sum_time(source):
+    time = {}
+    for i in range(len(source)):
+        if source[i][0] not in time.keys():
+            time[source[i][0] = int(source[i][3])
+        elif source[i][0] in time.keys():
+            time[source[i][0]] += int(source[i][3])
+        if source[i][1] not in time.keys():
+            time[source[i][1]] = int(source[i][3])
+        elif source[i][1] in time.keys():
+            time[source[i][1]] += int(source[i][3])
+        return time
+a = sum_time(calls)
+print (sorted(a,key=lambda x:a[x])[-1])
 """
 任务2: 哪个电话号码的通话总时间最长? 不要忘记，用于接听电话的时间也是通话时间的一部分。
 输出信息:
