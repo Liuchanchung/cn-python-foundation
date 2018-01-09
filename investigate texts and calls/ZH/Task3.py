@@ -11,7 +11,22 @@ with open('texts.csv', 'r') as f:
 with open('calls.csv', 'r') as f:
     reader = csv.reader(f)
     calls = list(reader)
-
+def numbers_collect(source):
+    for i in range(len(source)):
+        numbers = []
+        if source[i][0][:5] =='(080)':
+            if source[i][1][0] =='(':
+                if source[i][1][1:source[i][1].find(')')] not in numbers:
+                    numbers.append(source[i][1][1:source[i][1].find(')')])
+            elif source[i][1][5] ==' ':
+                if source[i][1][:4] not in numbers:
+                    numbers.append(source[i][1][:4])
+            elif source[i][1][:4] =='140':
+                if source[i][1][:4] not in numbers:
+                    numbers.append(source[i][1][:4])
+    return numbers
+print ('the numbers called by people in Bangalore have codes:' + '"\n".join(numbers)'
+       
 """
 任务3:
 (080)是班加罗尔的固定电话区号。
