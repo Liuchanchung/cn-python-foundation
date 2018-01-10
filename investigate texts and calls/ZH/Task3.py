@@ -26,7 +26,7 @@ def numbers_collect(source):
                     numbers.append(source[i][1][:4])
     return numbers
 a = "\n".join(numbers)
-print ('the numbers called by people in Bangalore have codes:' + a)
+print ('the numbers called by people in Bangalore have codes:' + '\n' + a)
        
 """
 任务3:
