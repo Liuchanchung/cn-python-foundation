@@ -25,7 +25,8 @@ def numbers_collect(source):
                 if source[i][1][:4] not in numbers:
                     numbers.append(source[i][1][:4])
     return numbers
-print ('the numbers called by people in Bangalore have codes:' + '"\n".join(numbers)'
+a = "\n".join(numbers)
+print ('the numbers called by people in Bangalore have codes:' + a)
        
 """
 任务3:
