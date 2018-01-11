@@ -20,7 +20,7 @@ def count_numbers(source):
                 if source[i][1] not in target:
                     target.append(source[i][1])
     return target
-print (len(count_numbers(calls)+len(count_numbers(texts))
+print ('There are' + (len(count_numbers(calls)+len(count_numbers(texts)) + 'different telephone numbers in the records.')
 
     
 """
