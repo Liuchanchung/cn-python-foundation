@@ -1,3 +1,4 @@
+
 """
 下面的文件将会从csv文件中读取读取短信与电话记录，
 你将在以后的课程中了解更多有关读取文件的知识。
@@ -11,6 +12,25 @@ with open('texts.csv', 'r') as f:
 with open('calls.csv', 'r') as f:
     reader = csv.reader(f)
     calls = list(reader)
+def seller_numbers(source):
+    sellers = set()   #建立集合
+    a_calls = set()   #接电话集合
+    for i in range(len(source)):
+        a_calls.add(source[i][1])
+        if source[i][0] not in a_calls:
+            sellers.add(source[i][0])
+    return sellers
+seller_a = seller_numbers(calls)
+def seller_eli(source):
+    for i in range(len(source)):
+        if source[i][0] in seller_a:
+            seller_a.remove(source[i][0])
+            if source[i][1] in seller_a:
+                seller_a.remove(source[i][1])
+    return seller_a
+seller_final = "\n".join(seller_eli(texts))
+print ('These numbers could be telemarketers:' + '\n' + seller_final)
+        
 
 """
 任务4:
