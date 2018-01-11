@@ -12,8 +12,8 @@ with open('calls.csv', 'r') as f:
     reader = csv.reader(f)
     calls = list(reader)
 def numbers_collect(source):
+    numbers = []
     for i in range(len(source)):
-        numbers = []
         if source[i][0][:5] =='(080)':
             if source[i][1][0] =='(':
                 if source[i][1][1:source[i][1].find(')')] not in numbers:
@@ -27,7 +27,18 @@ def numbers_collect(source):
     return numbers
 a = "\n".join(numbers)
 print ('the numbers called by people in Bangalore have codes:' + '\n' + a)
-       
+def count_bjlo(source):
+    numbers_bjlo = []
+    for i in range(len(source)):
+        if source[i][:5] == '(080)':
+        if source[i] not in numbers_bjlo:
+            numbers_bjlo.append(source[i])
+        else:
+            numbers_bjlo
+    return numbers_bjlo
+rate = float(len(numbers_bjlo))/float(len(numbers)) * 100
+print ('%.2f%%' %rate + 'percent of calls from fixed lines in Bangalore are calls to other fixed lines in Bangalore.')
+            
 """
 任务3:
 (080)是班加罗尔的固定电话区号。
