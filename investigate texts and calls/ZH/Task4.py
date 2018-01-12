@@ -14,10 +14,9 @@ with open('calls.csv', 'r') as f:
     calls = list(reader)
 def seller_numbers(source):
     sellers = set()   #建立集合
-    a_calls = set()   #拨电话集合
     for i in range(len(source)):
-        a_calls.add(source[i][0])
-        if source[i][1] in a_calls:
+        sellers.add(source[i][0])
+        if source[i][1] in sellers:
             sellers.remove(source[i][1])
     return sellers
 seller_a = seller_numbers(calls)
